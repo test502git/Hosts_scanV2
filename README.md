@@ -1,5 +1,5 @@
 # Hosts_scanV2优化版
-这是一个用于IP和域名碰撞匹配访问的小工具优化版， 能大大减少碰撞中出来的假误报，旨意用来匹配出渗透过程中需要绑定hosts才能访问的弱主机或内部系统
+这是一个用于IP和域名碰撞匹配访问的小工具优化版， 能大大减少碰撞中出来的假误报，只为寻找有效的碰撞，旨意用来匹配出渗透过程中需要绑定hosts才能访问的弱主机或内部系统
 
 # Hosts_scan原版规则如下
 https://github.com/fofapro/Hosts_scan
@@ -11,7 +11,7 @@ https://github.com/fofapro/Hosts_scan
 
 # Hosts_scanV2版本优化后的规则如下
 假如 12.12.12.12  直接访问时 页面为 aaaaaaa页面
-绑定host域名之后，再访问时 页面也为aaaaaaa页面，V2直接忽略~
+绑定host域名之后，再访问时 页面也为aaaaaaa页面，V2直接忽略~ 当然忽略的也会自动保存在ignored-req.txt中，防止遗漏
 
 那什么才算有效？ 只有当 
 12.12.12.12  直接访问时 页面为 aaaaaaa页面，或其他页面
