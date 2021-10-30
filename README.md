@@ -17,7 +17,7 @@ https://github.com/fofapro/Hosts_scan
 12.12.12.12  直接访问时 页面为 aaaaaaa页面，或其他页面
 碰撞host域名之后，再访问时 页面也为bbbbbb页面，算作有效碰撞
 简单说，ip与域名 访问之间要有差别才算有效碰撞
-![image](https://user-images.githubusercontent.com/50769953/139517788-0a8f6b81-b3df-4e09-ac07-0a35ef81fc31.png)
+![image](https://user-images.githubusercontent.com/50769953/139518515-74ce17a2-dfd4-42f8-966d-be50f714b297.png)
 
 
 
