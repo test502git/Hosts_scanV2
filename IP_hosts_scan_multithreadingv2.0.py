@@ -29,7 +29,9 @@ def host_check(host_ip):
             res = r.get(url,verify=False,headers=headers,timeout=30)
             res2 = r.get(url, verify=False, headers=headers2, timeout=30)
             charset = chardet.detect(res.content)["encoding"]
+            charset2 = chardet.detect(res2.content)["encoding"]
             res.encoding = charset
+            res2.encoding = charset2
 
             title = ""
             title2 = ""
