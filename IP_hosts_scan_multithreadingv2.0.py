@@ -41,7 +41,7 @@ def host_check(host_ip):
             info = u'%s\t%s -- %s 数据包大小：%d 标题：%s' % (ip,host,scheme+host,len(res.text),title)
 
 
-            print(len(res.text),len(res2.text),title2,title)
+            #print(len(res.text),len(res2.text),title2,title)
 
 
             if len(res.text) != len(res2.text) and title!=title2:
