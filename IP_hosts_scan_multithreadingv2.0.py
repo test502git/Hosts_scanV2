@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
-#Author:Rivaill
-#这是一个用于IP和域名碰撞匹配访问的小工具(多线程)
+#Author:tangshoupu
+#这是一个用于IP和域名碰撞匹配访问的小工具(多线程)升级版
 import itertools
 import signal
 import threading
@@ -55,7 +55,7 @@ def host_check(host_ip):
                         lock.release()
             else:
                 print('存在假碰撞，忽略，保存在ignored-req.txt中',info)
-                open('ignored-req.txt',encoding='utf-8').write(str(info)+'\n')
+                open('ignored-req.txt','a',encoding='utf-8').write(str(info)+'\n')
 
         except Exception as ex:
             if lock.acquire():
