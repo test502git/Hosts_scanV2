@@ -35,13 +35,13 @@ def host_check(host_ip):
             title2 = ""
             try:
                 title = re.search('<title>(.*)</title>', res.text).group(1) #获取标题
-                title2 = re.search('<title>(.*)</title>', res.text).group(1)  # 获取标题
+                title2 = re.search('<title>(.*)</title>', res2.text).group(1)  # 获取标题
             except Exception as ex:
                 title = u"获取标题失败"
             info = u'%s\t%s -- %s 数据包大小：%d 标题：%s' % (ip,host,scheme+host,len(res.text),title)
 
 
-            #print(len(res.text),len(res2.text),title2,title)
+            print(len(res.text),len(res2.text),title2,title)
 
 
             if len(res.text) != len(res2.text) and title!=title2:
