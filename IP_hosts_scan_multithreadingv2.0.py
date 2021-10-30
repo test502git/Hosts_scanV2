@@ -36,11 +36,7 @@ def host_check(host_ip):
                     success_list.append(info)
                     pbar.echo(info)
                     pbar.update_suc()
-                    open('hosts_ok-ism.txt','a', encoding='utf-8').write(str(info)+'\n')
-                    with open('hosts_ok.txt','a+') as f:
-                        f.write(info.encode("utf-8") + "\n")
-                        f.close()
-
+                    open('hosts_ok-is.txt','a', encoding='utf-8').write(str(info)+'\n')
                 finally:
                     lock.release()
 
@@ -72,7 +68,7 @@ if __name__ == '__main__':
     original_sigint_handler = signal.signal(signal.SIGINT, signal.SIG_IGN)
     signal.signal(signal.SIGINT, original_sigint_handler)
 
-    pool = Pool(40)
+    pool = Pool(20)
 
     try:
         pool.map_async(host_check, host_ip_list)
