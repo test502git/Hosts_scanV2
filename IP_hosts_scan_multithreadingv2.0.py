@@ -27,6 +27,8 @@ def host_check(host_ip):
             r = requests.session()
             requests.packages.urllib3.disable_warnings()
             res = r.get(url,verify=False,headers=headers,timeout=30)
+            status_codes =str(res.status_code)
+
             res2 = r.get(url, verify=False, headers=headers2, timeout=30)
             charset = chardet.detect(res.content)["encoding"]
             charset2 = chardet.detect(res2.content)["encoding"]
@@ -38,9 +40,11 @@ def host_check(host_ip):
             try:
                 title = re.search('<title>(.*)</title>', res.text).group(1) #获取标题
                 title2 = re.search('<title>(.*)</title>', res2.text).group(1)  # 获取标题
+
+
             except Exception as ex:
                 title = u"获取标题失败"
-            info = u'%s\t%s -- %s 数据包大小：%d 标题：%s' % (ip,host,scheme+host,len(res.text),title)
+            info = u'%s\t%s -- %s 数据包大小：%d 标题：%s 状态码：%s' % (ip,host,scheme+host,len(res.text),title,status_codes)
 
 
             #print(len(res.text),len(res2.text),title2,title)
@@ -65,6 +69,7 @@ def host_check(host_ip):
                     # print ex.message
                     # logging.exception(ex)
                     error = u"%s\t%s -- %s  访问失败！~" % (ip,host, scheme+host)
+                    print(ex)
                     pbar.echo(error)
                 finally:
                     lock.release()
